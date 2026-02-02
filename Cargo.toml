@@ -1,0 +1,38 @@
+[package]
+name = "voicewm"
+version = "0.1.0"
+edition = "2021"
+authors = ["Diaz <muhammaddiaznurfarizki@gmail.com>"]
+description = "Universal voice control for Linux window managers"
+license = "MIT"
+repository = "https://github.com/MDiaznf23/voicewm"
+
+[dependencies]
+# Config parsing
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8"
+dirs = "5.0"
+
+# Voice & Audio Engine
+vosk = "0.3"
+cpal = "0.15"
+ringbuf = "0.3.3" 
+
+# CLI
+clap = { version = "4.5", features = ["derive"] }
+
+# Logging
+env_logger = "0.11"
+log = "0.4"
+
+# Async Runtime
+tokio = { version = "1", features = ["full"] }
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+[build-dependencies]
+# Build dependencies untuk binding C/C++
+cc = "1.0"
+bindgen = "0.70"

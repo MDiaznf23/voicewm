@@ -1,0 +1,16 @@
+[general]
+# Write your vosk model path
+model_path = "/path/to/your/models/vosk-en-small"
+language = "en"
+confidence_threshold = 0.7
+threads = 4
+
+[audio]
+sample_rate = 16000
+
+[commands]
+# format: "keywords" = "shell commands"
+"terminal" = "alacritty"
+"browser" = "brave"
+"close window" = "i3-msg kill"
+"lock screen" = "i3lock"
