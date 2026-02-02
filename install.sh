@@ -20,9 +20,9 @@ mkdir -p "$CONFIG_DIR"
 # Move file config.toml from root project to folder .config
 if [ -f "config.toml" ]; then
     cp -n config.toml "$CONFIG_DIR/config.toml"
-    echo "Konfigurasi disalin ke $CONFIG_DIR/config.toml"
+    echo "Configuration move to $CONFIG_DIR/config.toml"
 else
-    echo "Peringatan: config.toml tidak ditemukan di root project."
+    echo "Warning: config.toml not found in root project."
 fi
 
 echo "--- Phase 4: Choose Model Vosk (English) ---"
@@ -51,9 +51,8 @@ case $choice in
 esac
 
 unzip model.zip -d models/
-# Menghapus akhiran versi agar konsisten di config.toml
 mv models/vosk-model-* models/vosk-en
 rm model.zip
 
 echo "--- Instalasi Selesai ---"
-echo "Silakan edit $CONFIG_DIR/config.toml dan arahkan model_path ke $PWD/models/vosk-en"
+echo "Please edit $CONFIG_DIR/config.toml and mmake model_path to $PWD/models/vosk-en"
