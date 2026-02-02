@@ -1,23 +1,23 @@
 #!/bin/bash
 # install.sh - Installer for voicewm
 
-echo "--- Tahap 1: Instalasi Library Vosk ---"
+echo "--- Phase 1: Download Library Vosk ---"
 wget https://github.com/alphacep/vosk-api/releases/download/v0.3.45/vosk-linux-x86_64-0.3.45.zip
 unzip -o vosk-linux-x86_64-0.3.45.zip
 sudo cp vosk-linux-x86_64-0.3.45/libvosk.so /usr/local/lib/
 sudo ldconfig
 rm -rf vosk-linux-x86_64-0.3.45* 
 
-echo "--- Tahap 2: Kompilasi voicewm ---"
+echo "--- Phase 2: Compile voicewm ---"
 LIBRARY_PATH=/usr/local/lib cargo build --release
 sudo cp target/release/voicewm /usr/local/bin/
 
-echo "--- Tahap 3: Setup Konfigurasi ---"
-# Membuat direktori config di home user jika belum ada
+echo "--- Phase 3: Setup Configuration ---"
+# Make directory config
 CONFIG_DIR="$HOME/.config/voicewm"
 mkdir -p "$CONFIG_DIR"
 
-# Memindahkan file config.toml dari root project ke folder .config
+# Move file config.toml from root project to folder .config
 if [ -f "config.toml" ]; then
     cp -n config.toml "$CONFIG_DIR/config.toml"
     echo "Konfigurasi disalin ke $CONFIG_DIR/config.toml"
@@ -25,7 +25,7 @@ else
     echo "Peringatan: config.toml tidak ditemukan di root project."
 fi
 
-echo "--- Tahap 4: Pilihan Model Vosk (English) ---"
+echo "--- Phase 4: Choose Model Vosk (English) ---"
 echo "Choose models that you want to try:"
 echo "1) Small (40MB)"
 echo "2) Medium (128MB)"
