@@ -45,7 +45,7 @@ case $choice in
         wget https://alphacephei.com/vosk/models/vosk-model-en-us-0.22.zip -O model.zip
         ;;
     *)
-        echo "Pilihan tidak valid. Melewati download model."
+        echo "Not valid. Skipping download model."
         exit 1
         ;;
 esac
@@ -54,5 +54,5 @@ unzip model.zip -d models/
 mv models/vosk-model-* models/vosk-en
 rm model.zip
 
-echo "--- Instalasi Selesai ---"
+echo "--- Installation done ---"
 echo "Please edit $CONFIG_DIR/config.toml and mmake model_path to $PWD/models/vosk-en"
