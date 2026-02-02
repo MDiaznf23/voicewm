@@ -55,4 +55,4 @@ mv models/vosk-model-* models/vosk-en
 rm model.zip
 
 echo "--- Installation done ---"
-echo "Please edit $CONFIG_DIR/config.toml and mmake model_path to $PWD/models/vosk-en"
+echo "Please edit $CONFIG_DIR/config.toml and make the model_path to $PWD/models/vosk-en"
