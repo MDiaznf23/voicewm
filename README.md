@@ -2,6 +2,10 @@
 
 A lightweight, universal voice control for Linux window managers (i3wm, Sway, KDE, etc.) built with **Rust** and **Vosk**. It runs 100% locally and is significantly fast for real-time commands.
 
+# DEMO VIDEO
+
+https://github.com/user-attachments/assets/3e227abd-341b-4c3c-8c9a-562ed9a4bd4e
+
 ## Features
 
 - 100% offline voice recognition using Vosk
